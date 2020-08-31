@@ -3,10 +3,10 @@
 // exercice 1 //
 class Film
 {
-  private $_id;
-  private $_nom;
-  private $_realisateur;
-  private $_annee;
+  protected $_id;
+  protected $_nom;
+  protected $_realisateur;
+  protected $_annee;
 
 // COnstructeur
 public function __construct($annee,$nom){
@@ -62,8 +62,8 @@ public function annee(){
 // exercice 2 //
 class Calculatrice
 {
-  private $_number1;
-  private $_number2;
+  protected $_number1;
+  protected $_number2;
 //constructeur
 public function __construct($number1,$number2){
   $this->setNumber($number1,$number2);
@@ -117,7 +117,7 @@ public static function modulo($number1,$number2){
 
 // exercice 3 //
 //class animal
-class Animal
+abstract class Animal
 {
   function respire(){
     echo "respire";
@@ -125,10 +125,10 @@ class Animal
 }
 
 //class oiseau
-class Oiseau extends Animal
+abstract class Oiseau extends Animal
 {
-private $_nom;
-private $_age;
+protected $_nom;
+protected $_age;
 
 public function __construct($nom,$age){
   $this->vole();
@@ -158,10 +158,10 @@ public function age(){
 }
 
 //class reptile
-class Reptile extends Animal
+abstract class Reptile extends Animal
 {
-  private $_nom;
-  private $_age;
+  protected $_nom;
+  protected $_age;
   public function __construct($nom,$age){
     $this->ecaille();
     $this->setNom($nom);
