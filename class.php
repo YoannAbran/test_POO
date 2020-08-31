@@ -120,12 +120,94 @@ public static function modulo($number1,$number2){
 class Animal
 {
   function respire(){
-    echo;
+    echo "respire";
   }
 }
 
 //class oiseau
+class Oiseau extends Animal
+{
+private $_nom;
+private $_age;
 
+public function __construct($nom,$age){
+  $this->vole();
+  $this->setNom($nom);
+  $this->setAge($age);
+  echo $this->nom($nom),"</br>";
+  echo $this->age($age),"</br>";
 
+}
+public function vole(){
+  echo " je suis un oiseau donc je vole </br>";
+}
+//setters
+public function setNom($nom){
+  $this->_nom=$nom;
+}
+public function setAge($age){
+  $this->_age=$age;
+}
+//getters
+public function nom(){
+  return $this->_nom;
+}
+public function age(){
+  return $this->_age;
+}
+}
+
+//class reptile
+class Reptile extends Animal
+{
+  private $_nom;
+  private $_age;
+  public function __construct($nom,$age){
+    $this->ecaille();
+    $this->setNom($nom);
+    $this->setAge($age);
+    echo $this->nom($nom),"</br>";
+    echo $this->age($age),"</br>";
+  }
+
+  public function ecaille(){
+    echo "je suis un reptile j'ai des ecailles </br>";
+  }
+
+  //setters
+  public function setNom($nom){
+    $this->_nom=$nom;
+  }
+  public function setAge($age){
+    $this->_age=$age;
+  }
+  //getters
+  public function nom(){
+    return $this->_nom;
+  }
+  public function age(){
+    return $this->_age;
+  }
+}
+
+//class aigle et faucon
+class Aigle extends Oiseau
+{
+
+}
+class Faucon extends Oiseau
+{
+
+}
+
+//class tortue et crocodile
+class Tortue extends Reptile
+{
+
+}
+class Crocodile extends Reptile
+{
+
+}
 
  ?>
